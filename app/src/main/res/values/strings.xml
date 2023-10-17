@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GMaps2</string>
+    <string name="btn_name_lite_map">List Map</string>
+    <string name="btn_name_form_map">Form Map</string>
+    <string name="btn_name_artist">Artist</string>
+    <string name="btn_primer_mapa">MAPA 1</string>
+    <string name="btn_new_p">NEW PROCESSOR</string>
+    <string name="title_activity_map_three">MapThreeActivity</string>
+    <string name="btn_map_three">MAPA 3</string>
+</resources>
