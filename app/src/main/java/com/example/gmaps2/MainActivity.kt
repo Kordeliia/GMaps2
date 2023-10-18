@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             btnPMap.setOnClickListener(this@MainActivity)
             btnNewProcessor.setOnClickListener(this@MainActivity)
             btnMapThree.setOnClickListener(this@MainActivity)
+            btnPMapFour.setOnClickListener(this@MainActivity)
+            btnPMapFive.setOnClickListener(this@MainActivity)
+            btnPMapSix.setOnClickListener(this@MainActivity)
+            btnMapML.setOnClickListener(this@MainActivity)
             ///Botones menu
             btnArtist.setOnClickListener(this@MainActivity)
             btnLiteList.setOnClickListener(this@MainActivity)
@@ -28,26 +32,28 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         view?.let{
             when(it.id){
                 //Botones cuerpo
-                R.id.btnPMap -> {
+                R.id.btnPMap ->
                     startActivity(Intent(this, FirstMapActivity::class.java))
-                }
-                R.id.btnNewProcessor -> {
+                R.id.btnNewProcessor ->
                     startActivity(Intent(this, NewProcessorActivity::class.java))
-                }
-                R.id.btnMapThree -> {
+                R.id.btnMapThree ->
                     startActivity(Intent(this, MapThreeActivity::class.java))
-                }
+                R.id.btnPMapFour ->
+                    startActivity(Intent(this, CameraViewActivity::class.java))
+                R.id.btnPMapFive ->
+                    startActivity(Intent(this, ControlGesturesActivity::class.java))
+                R.id.btnPMapSix ->
+                    startActivity(Intent(this, EventsActivity::class.java))
+                R.id.btnMapML ->
+                    startActivity(Intent(this, MyLocationActivity::class.java))
                 //Botones menu
-                
-                R.id.btnArtist -> {
+                R.id.btnArtist ->
                     startActivity(Intent(this, FirstMapActivity::class.java))
-                }
-                R.id.btnLiteList -> {
+                R.id.btnLiteList ->
                     startActivity(Intent(this, FirstMapActivity::class.java))
-                }
-                R.id.btnFormMap -> {
+                R.id.btnFormMap ->
                     startActivity(Intent(this, FirstMapActivity::class.java))
-                }
+
             }
         }
     }

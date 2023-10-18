@@ -7,4 +7,23 @@
     <string name="btn_new_p">NEW PROCESSOR</string>
     <string name="title_activity_map_three">MapThreeActivity</string>
     <string name="btn_map_three">MAPA 3</string>
+    <string name="btn_cuarto_mapa">MAPA 4</string>
+    <string name="btn_quinto_mapa">MAPA 5</string>
+    <string name="title_marker_castillo_ponferrada">Castillo Ponferrada</string>
+    <string name="btn_text_normal">Normal</string>
+    <string name="btn_text_hybrid">Hybrid</string>
+    <string name="btn_text_satellite">Sat</string>
+    <string name="btn_text_terrain">Terrain</string>
+    <string name="btn_text_none">N/A</string>
+    <string name="toast_msg_nav_ready">Navegador preparado</string>
+    <string name="btn_sexto_mapa">MAPA 6</string>
+    <string name="mark_valencia">Ciudad de las Artes y las Ciencias</string>
+    <string name="toast_click_txt">Click</string>
+    <string name="toast_long_click_txt">Long click</string>
+    <string name="marker_valencia">Valencia, Spain</string>
+    <string name="tag_abc">abc</string>
+    <string name="location_permission_denied">Permiso denegado. Por favor intente de nuevo y otorgue el permiso de ubicación.\nSi el permiso ha sido denegado permanentemente, este puede habilitarse en Configuración &gt; Aplicaciones &gt; Maps Basics.</string>
+    <string name="permission_required_toast">El permiso de ubicación es requerido.</string>
+    <string name="permission_rationale_location">Se requiere acceder al servicio de ubicación</string>
+    <string name="btn_my_location">MI LOCALIZACION</string>
 </resources>

@@ -58,4 +58,10 @@ dependencies {
     //GMaps
     implementation ("com.google.android.gms:play-services-maps:18.1.0")
 
+    //Lifecycle
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+
+    //Corrutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 }

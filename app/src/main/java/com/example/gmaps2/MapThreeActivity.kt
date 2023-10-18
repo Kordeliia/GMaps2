@@ -21,9 +21,9 @@ class MapThreeActivity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback 
         panoramaFragment2.getStreetViewPanoramaAsync(this)
     }
     override fun onStreetViewPanoramaReady(streetViewPanorama: StreetViewPanorama) {
-        val ponferradina = LatLng(42.543234, -6.593890)
+
         streetViewPanorama.apply {
-           setPosition(ponferradina)
+           setPosition(Locations.ponferradina)
        }
     }
 }

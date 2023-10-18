@@ -18,10 +18,9 @@ class NewProcessorActivity : AppCompatActivity(), OnMapReadyCallback, OnMapsSdkI
         MapsInitializer.initialize(this, MapsInitializer.Renderer.LATEST, this)
     }
     override fun onMapReady(googleMap: GoogleMap) {
-        val mursiaSity = LatLng(37.982968, -1.127733)
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(mursiaSity))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mursiaSity, 15f))
-        googleMap.addMarker(MarkerOptions().position(mursiaSity).title("MursiaSity"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(Locations.mursiaSity))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Locations.mursiaSity, 15f))
+        googleMap.addMarker(MarkerOptions().position(Locations.mursiaSity).title("MursiaSity"))
         googleMap.isTrafficEnabled = true
     }
     override fun onMapsSdkInitialized(p0: MapsInitializer.Renderer) {

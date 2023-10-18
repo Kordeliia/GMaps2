@@ -98,6 +98,42 @@
                 app:icon="@drawable/ic_map_white"
                 app:iconGravity="textEnd"
                 />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPMapFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_cuarto_mapa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:icon="@drawable/ic_map_white"
+                app:iconGravity="textEnd"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPMapFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_quinto_mapa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:icon="@drawable/ic_map_white"
+                app:iconGravity="textEnd"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPMapSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_sexto_mapa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:icon="@drawable/ic_map_white"
+                app:iconGravity="textEnd"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMapML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_my_location"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:icon="@drawable/ic_map_white"
+                app:iconGravity="textEnd"
+                />
         </LinearLayout>
     </ScrollView>
 
