@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/common_padding_min"
+    android:paddingVertical="@dimen/common_padding_micro">
+    <ImageView
+        android:id="@+id/imgPCentral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+/>
+    <RatingBar
+        android:id="@+id/rbPCentral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:rating="4.2"
+        android:lines="4"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@+id/imgPCentral"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgPCentral"
+        app:layout_constraintBottom_toBottomOf="@id/imgPCentral"
+        android:progressTint="@color/purple_200"
+        style="?attr/ratingBarStyleSmall"/>
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="@dimen/common_padding_none"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        app:layout_constraintTop_toBottomOf="@id/imgPCentral"
+        android:text="@string/name_parc_central"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="@dimen/common_padding_none"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceCaption"
+        tools:text="@string/text_parc_central"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

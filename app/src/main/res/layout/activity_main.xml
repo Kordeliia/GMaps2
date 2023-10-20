@@ -134,6 +134,24 @@
                 app:icon="@drawable/ic_map_white"
                 app:iconGravity="textEnd"
                 />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMapM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_map_markers"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:icon="@drawable/ic_map_white"
+                app:iconGravity="textEnd"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPolyline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_polyline"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:icon="@drawable/ic_map_white"
+                app:iconGravity="textEnd"
+                />
         </LinearLayout>
     </ScrollView>
 

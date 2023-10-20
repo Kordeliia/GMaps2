@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             btnPMapFive.setOnClickListener(this@MainActivity)
             btnPMapSix.setOnClickListener(this@MainActivity)
             btnMapML.setOnClickListener(this@MainActivity)
+            btnMapM.setOnClickListener(this@MainActivity)
+            btnPolyline.setOnClickListener(this@MainActivity)
             ///Botones menu
             btnArtist.setOnClickListener(this@MainActivity)
             btnLiteList.setOnClickListener(this@MainActivity)
@@ -46,6 +48,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                     startActivity(Intent(this, EventsActivity::class.java))
                 R.id.btnMapML ->
                     startActivity(Intent(this, MyLocationActivity::class.java))
+                R.id.btnMapM ->
+                    startActivity(Intent(this, MarkersActivity::class.java))
+                R.id.btnPolyline ->
+                    startActivity(Intent(this, PolylineActivity::class.java))
                 //Botones menu
                 R.id.btnArtist ->
                     startActivity(Intent(this, FirstMapActivity::class.java))
