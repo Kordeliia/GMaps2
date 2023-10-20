@@ -1,11 +1,23 @@
 package com.example.gmaps2
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.gmaps2.databinding.ActivityPolylineBinding
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.Dash
+import com.google.android.gms.maps.model.Dot
+import com.google.android.gms.maps.model.Gap
+import com.google.android.gms.maps.model.JointType
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mapPolyline: GoogleMap
@@ -38,11 +50,46 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mapPolyline = googleMap
         mapPolyline.uiSettings.isZoomControlsEnabled = true
+        mapPolyline.setPadding(0, 0, 0, Utils.dp(64))
         runPolyline()
-        runPolygon()
-        runCircle()
+      //  runPolygon()
+     //   runCircle()
     }
+    private fun runPolyline() {
 
+        val route = mutableListOf(Locations.murciaTerraNatura, Locations.murciaAlcantarilla,
+            Locations.murciaPatinio, Locations.murciaTorreaguera, Locations.murciaSantomera)
+        mapPolyline.addMarker(MarkerOptions().position(Locations.murciaTerraNatura).title(
+            getString(
+                R.string.marker_murcia_terra_natura
+            )))
+        val polyline = mapPolyline.addPolyline(PolylineOptions()
+            .width(8f)
+            .color(Color.MAGENTA)
+            .geodesic(true)
+            .clickable(true))
+       // polyline.points = route
+        lifecycleScope.launch {
+            route.add(Locations.murciaTerraNatura)
+            route.add(Locations.murciaAlcantarilla)
+            route.add(Locations.murciaPatinio)
+            route.add(Locations.murciaTorreaguera)
+            route.add(Locations.murciaSantomera)
+            val runtimeRoute = mutableListOf<LatLng>()
+            for(point in route){
+                runtimeRoute.add(point)
+                polyline.points = runtimeRoute
+                delay(1_500)
+            }
+        }
+        polyline.tag = getString(R.string.tag_polyline)
+        mapPolyline.setOnPolylineClickListener {
+            Toast.makeText(this,"${it.tag}" , Toast.LENGTH_SHORT).show()
+        }
+        polyline.pattern = listOf(Dot(), Gap(16f), Dash(32f), Gap(16f))
+        polyline.jointType = JointType.ROUND
+        polyline.width = 16f
+    }
     private fun runCircle() {
         TODO("Not yet implemented")
     }
@@ -51,7 +98,5 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
         TODO("Not yet implemented")
     }
 
-    private fun runPolyline() {
-        TODO("Not yet implemented")
-    }
+
 }

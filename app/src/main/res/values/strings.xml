@@ -32,4 +32,6 @@
     <string name="name_parc_central">Parc Central</string>
     <string name="pCentral_name">Parque Central</string>
     <string name="btn_polyline">POLYLINE</string>
+    <string name="marker_murcia_terra_natura">Terra Natura, Murcia</string>
+    <string name="tag_polyline">Rodeamos Murcia</string>
 </resources>
