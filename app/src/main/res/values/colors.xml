@@ -13,4 +13,9 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+
+    <color name="teal_200_transparent">#2F03DAC5</color>
+    <color name="purple_700_stroke">#B23700B3</color>
+    <color name="pink_transparent">#4DFA0060</color>
+    <color name="light_blue_600_transparent">#80039BE5</color>
 </resources>

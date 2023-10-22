@@ -4,18 +4,25 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.gmaps2.databinding.ActivityPolylineBinding
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.CircleOptions
+import com.google.android.gms.maps.model.CustomCap
 import com.google.android.gms.maps.model.Dash
 import com.google.android.gms.maps.model.Dot
 import com.google.android.gms.maps.model.Gap
 import com.google.android.gms.maps.model.JointType
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolygonOptions
 import com.google.android.gms.maps.model.PolylineOptions
+import com.google.android.gms.maps.model.RoundCap
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -52,8 +59,8 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
         mapPolyline.uiSettings.isZoomControlsEnabled = true
         mapPolyline.setPadding(0, 0, 0, Utils.dp(64))
         runPolyline()
-      //  runPolygon()
-     //   runCircle()
+        runPolygon()
+        runCircle()
     }
     private fun runPolyline() {
 
@@ -89,13 +96,50 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
         polyline.pattern = listOf(Dot(), Gap(16f), Dash(32f), Gap(16f))
         polyline.jointType = JointType.ROUND
         polyline.width = 16f
+
+       //polyline.startCap = RoundCap()
+        Utils.getBitmapFromVector(this, R.drawable.ic_animal)?.let{
+            polyline.startCap = CustomCap(BitmapDescriptorFactory.fromBitmap(it))
+        }
+        Utils.getBitmapFromVector(this, R.drawable.ic_home)?.let{
+            polyline.endCap = CustomCap(BitmapDescriptorFactory.fromBitmap(it))
+        }
     }
     private fun runCircle() {
-        TODO("Not yet implemented")
+        val circle = mapPolyline.addCircle(CircleOptions().center(Locations.ponferradaCastillo)
+            .radius(200.0).strokeColor(ContextCompat.getColor(this, R.color.light_blue_600_transparent))
+            .fillColor(ContextCompat.getColor(this, R.color.pink_transparent))
+            .clickable(true))
     }
 
     private fun runPolygon() {
-        TODO("Not yet implemented")
+        val polygon = mapPolyline.addPolygon(PolygonOptions()
+            .add(Locations.ponferradaP1, Locations.ponferradaP2, Locations.ponferradaP3,
+                Locations.ponferradaP4)
+            .strokeWidth(8f)
+            .strokeColor(ContextCompat.getColor(this, R.color.purple_700_stroke))
+            .fillColor(ContextCompat.getColor(this, R.color.teal_200_transparent))
+            .geodesic(true)
+            .clickable(true)
+            .addHole(Locations.ponferradaHole))
+        polygon.tag = getString(R.string.tag_polygon)
+        mapPolyline.setOnPolygonClickListener {
+            Toast.makeText(this,"${it.tag}" , Toast.LENGTH_SHORT).show()
+        }
+        polygon.strokePattern = listOf(Dot(), Gap(16f), Dash(32f), Gap(16f))
+        val polygon2 = mapPolyline.addPolygon(PolygonOptions()
+            .add(Locations.ponferrada2P1, Locations.ponferrada2P2, Locations.ponferrada2P3,
+                Locations.ponferrada2P4)
+            .strokeWidth(8f)
+            .strokeColor(ContextCompat.getColor(this, R.color.teal_200_transparent))
+            .fillColor(ContextCompat.getColor(this, R.color.purple_700_stroke))
+            .geodesic(true)
+            .clickable(true))
+        mapPolyline.moveCamera(CameraUpdateFactory.newLatLngZoom(Locations.ponferradaP, 12f))
+        polygon2.tag = getString(R.string.tag_polygon2)
+        mapPolyline.setOnPolygonClickListener {
+            Toast.makeText(this,"${it.tag}" , Toast.LENGTH_SHORT).show()
+        }
     }
 
 

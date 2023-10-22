@@ -31,7 +31,9 @@
     <string name="text_parc_central">Parque urbano moderno y renovado, con jardines paisajísticos, zona infantil, una fuente y área canina.</string>
     <string name="name_parc_central">Parc Central</string>
     <string name="pCentral_name">Parque Central</string>
-    <string name="btn_polyline">POLYLINE</string>
+    <string name="btn_polyline">SHAPES</string>
     <string name="marker_murcia_terra_natura">Terra Natura, Murcia</string>
     <string name="tag_polyline">Rodeamos Murcia</string>
+    <string name="tag_polygon">Rodeamos Ponferrada</string>
+    <string name="tag_polygon2">Rodeamos otra zona de Ponferrada</string>
 </resources>
