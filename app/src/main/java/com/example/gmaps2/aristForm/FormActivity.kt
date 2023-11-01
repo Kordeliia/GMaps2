@@ -10,11 +10,14 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.gmaps2.R
 import com.example.gmaps2.common.Utils
+import com.example.gmaps2.common.Constants
+import com.example.gmaps2.common.Constants.BIRTH_LOCATION
 import com.example.gmaps2.common.dataAccess.FakeDatabase
 import com.example.gmaps2.common.entities.Artist
 import com.example.gmaps2.common.entities.BirthLocation
 import com.example.gmaps2.databinding.ActivityFormBinding
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.gson.Gson
 
 class FormActivity : AppCompatActivity(), AuxLocation {
     private lateinit var binding : ActivityFormBinding
@@ -55,6 +58,9 @@ class FormActivity : AppCompatActivity(), AuxLocation {
     private fun showMap(){
         artist?.let{
             val dialogFragment = LocationFragment(this)
+            var args = Bundle()
+            args.putString(BIRTH_LOCATION, Gson().toJson(it.birthLocation))
+            dialogFragment.arguments = args
             val transaction = supportFragmentManager.beginTransaction()
             dialogFragment.show(transaction, LocationFragment.TAG)
         }

@@ -45,4 +45,7 @@
     <string name="hint_form_birth_location">Lugar de Nacimiento</string>
     <string name="btn_text_save">GUARDAR</string>
     <string name="content_description_marker">Marcador de localización</string>
+    <string name="fragment_toolbar_title">Editar Ubicación</string>
+    <string name="material_button_tb_form_fragment_text">SAVE</string>
+    <string name="tv_text_circular_reveal">Ubicación seleccionada</string>
 </resources>

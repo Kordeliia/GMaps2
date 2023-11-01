@@ -9,4 +9,5 @@
     <dimen name="img_width_list">32dp</dimen>
     <dimen name="img_map_size">56dp</dimen>
     <dimen name="img_form_width_size">256dp</dimen>
+    <dimen name="circle_reveal_height_size">72dp</dimen>
 </resources>
