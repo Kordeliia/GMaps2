@@ -16,34 +16,46 @@
         android:theme="@style/Theme.GMaps2"
         tools:targetApi="31">
         <activity
-            android:name=".PolylineActivity"
+            android:name=".aristForm.FormActivity"
             android:exported="false" />
         <activity
-            android:name=".MarkersActivity"
+            android:name=".artistMap.ArtistMapActivity"
             android:exported="false" />
         <activity
-            android:name=".MyLocationActivity"
+            android:name=".artisList.LiteListActivity"
             android:exported="false" />
         <activity
-            android:name=".EventsActivity"
+            android:name=".modes.LiteModeActivity"
             android:exported="false" />
         <activity
-            android:name=".ControlGesturesActivity"
+            android:name=".activities.PolylineActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraViewActivity"
+            android:name=".activities.MarkersActivity"
             android:exported="false" />
         <activity
-            android:name=".MapThreeActivity"
+            android:name=".activities.MyLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.EventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ControlGesturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CameraViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MapThreeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:label="@string/title_activity_map_three"
             android:theme="@style/Theme.GMaps2.Fullscreen" />
         <activity
-            android:name=".NewProcessorActivity"
+            android:name=".activities.NewProcessorActivity"
             android:exported="false" />
         <activity
-            android:name=".FirstMapActivity"
+            android:name=".activities.FirstMapActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

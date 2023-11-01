@@ -1,4 +1,4 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.gmaps2.common.Locations
+import com.example.gmaps2.R
+import com.example.gmaps2.common.Utils
 import com.example.gmaps2.databinding.ActivityPolylineBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -22,7 +25,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolygonOptions
 import com.google.android.gms.maps.model.PolylineOptions
-import com.google.android.gms.maps.model.RoundCap
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -64,8 +66,10 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     private fun runPolyline() {
 
-        val route = mutableListOf(Locations.murciaTerraNatura, Locations.murciaAlcantarilla,
-            Locations.murciaPatinio, Locations.murciaTorreaguera, Locations.murciaSantomera)
+        val route = mutableListOf(
+            Locations.murciaTerraNatura, Locations.murciaAlcantarilla,
+            Locations.murciaPatinio, Locations.murciaTorreaguera, Locations.murciaSantomera
+        )
         mapPolyline.addMarker(MarkerOptions().position(Locations.murciaTerraNatura).title(
             getString(
                 R.string.marker_murcia_terra_natura
@@ -107,15 +111,19 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     private fun runCircle() {
         val circle = mapPolyline.addCircle(CircleOptions().center(Locations.ponferradaCastillo)
-            .radius(200.0).strokeColor(ContextCompat.getColor(this, R.color.light_blue_600_transparent))
+            .radius(200.0).strokeColor(ContextCompat.getColor(this,
+                R.color.light_blue_600_transparent
+            ))
             .fillColor(ContextCompat.getColor(this, R.color.pink_transparent))
             .clickable(true))
     }
 
     private fun runPolygon() {
         val polygon = mapPolyline.addPolygon(PolygonOptions()
-            .add(Locations.ponferradaP1, Locations.ponferradaP2, Locations.ponferradaP3,
-                Locations.ponferradaP4)
+            .add(
+                Locations.ponferradaP1, Locations.ponferradaP2, Locations.ponferradaP3,
+                Locations.ponferradaP4
+            )
             .strokeWidth(8f)
             .strokeColor(ContextCompat.getColor(this, R.color.purple_700_stroke))
             .fillColor(ContextCompat.getColor(this, R.color.teal_200_transparent))
@@ -128,8 +136,10 @@ class PolylineActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         polygon.strokePattern = listOf(Dot(), Gap(16f), Dash(32f), Gap(16f))
         val polygon2 = mapPolyline.addPolygon(PolygonOptions()
-            .add(Locations.ponferrada2P1, Locations.ponferrada2P2, Locations.ponferrada2P3,
-                Locations.ponferrada2P4)
+            .add(
+                Locations.ponferrada2P1, Locations.ponferrada2P2, Locations.ponferrada2P3,
+                Locations.ponferrada2P4
+            )
             .strokeWidth(8f)
             .strokeColor(ContextCompat.getColor(this, R.color.teal_200_transparent))
             .fillColor(ContextCompat.getColor(this, R.color.purple_700_stroke))

@@ -1,9 +1,12 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.gmaps2.databinding.ActivityControlGesturesBinding
+import com.example.gmaps2.common.Locations
+import com.example.gmaps2.R
+import com.example.gmaps2.activities.adapter.PCentralAdapter
+import com.example.gmaps2.common.Utils
 import com.example.gmaps2.databinding.ActivityMarkersBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

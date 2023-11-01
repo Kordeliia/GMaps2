@@ -1,4 +1,4 @@
-package com.example.gmaps2
+package com.example.gmaps2.common
 
 import com.google.android.gms.maps.model.LatLng
 
@@ -35,6 +35,9 @@ object Locations {
     val ponferrada2P4 = LatLng(42.50982220785971, -6.597128497502872)
     //círculo
     val ponferradaCastillo = LatLng(42.54339271539532, -6.593748984469207)
+
+    //ArtistMap
+    val hongKongChina = LatLng(22.328454510843027, 114.17442417284278)
 
 
 

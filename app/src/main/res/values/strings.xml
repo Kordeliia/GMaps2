@@ -36,4 +36,13 @@
     <string name="tag_polyline">Rodeamos Murcia</string>
     <string name="tag_polygon">Rodeamos Ponferrada</string>
     <string name="tag_polygon2">Rodeamos otra zona de Ponferrada</string>
+    <string name="card_lite_title">Murcia</string>
+    <string name="card_lite_description">Ven a nuestra tierra de limones y paparajotes.</string>
+    <string name="btn_title_lite_mode">LITE MODE</string>
+    <string name="preview_name_item_lite_list">Nombre completo</string>
+    <string name="hint_form_name">Nombre</string>
+    <string name="hint_form_surname">Apellidos</string>
+    <string name="hint_form_birth_location">Lugar de Nacimiento</string>
+    <string name="btn_text_save">GUARDAR</string>
+    <string name="content_description_marker">Marcador de localización</string>
 </resources>

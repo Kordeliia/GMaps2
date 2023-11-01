@@ -1,16 +1,17 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import com.example.gmaps2.Utils.dp
+import com.example.gmaps2.common.Locations
+import com.example.gmaps2.R
+import com.example.gmaps2.common.Utils
+import com.example.gmaps2.common.Utils.dp
 import com.example.gmaps2.databinding.ActivityCameraViewBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.coroutines.delay

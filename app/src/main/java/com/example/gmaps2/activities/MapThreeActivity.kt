@@ -1,11 +1,12 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gmaps2.common.Locations
+import com.example.gmaps2.R
 import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback
 import com.google.android.gms.maps.StreetViewPanorama
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment
-import com.google.android.gms.maps.model.LatLng
 
 
 /**

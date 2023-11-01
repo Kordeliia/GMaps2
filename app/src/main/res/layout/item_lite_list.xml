@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/common_padding_min">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/common_padding_min">
+        <ImageView
+            android:id="@+id/imgePhoto"
+            android:layout_width="@dimen/img_width_list"
+            android:layout_height="@dimen/img_width_list"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_animal"/>
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="@dimen/common_padding_none"
+            android:layout_height="wrap_content"
+            tools:text="@string/preview_name_item_lite_list"
+            app:layout_constraintTop_toTopOf="@+id/imgePhoto"
+            app:layout_constraintBottom_toBottomOf="@+id/imgePhoto"
+            app:layout_constraintStart_toEndOf="@+id/imgePhoto"
+            android:layout_marginStart="@dimen/common_padding_default"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            />
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/itemMap"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_padding_none"
+            app:liteMode="true"
+            app:mapType="none"
+            app:layout_constraintTop_toBottomOf="@+id/imgePhoto"
+            app:layout_constraintStart_toStartOf="@id/imgePhoto"
+            app:layout_constraintEnd_toEndOf="@id/tvName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="3:2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

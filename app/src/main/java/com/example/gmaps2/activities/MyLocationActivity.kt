@@ -1,4 +1,4 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -10,7 +10,10 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
-import com.example.gmaps2.databinding.ActivityControlGesturesBinding
+import com.example.gmaps2.common.Locations
+import com.example.gmaps2.common.PermissionUtils
+import com.example.gmaps2.R
+import com.example.gmaps2.common.Utils
 import com.example.gmaps2.databinding.ActivityMyLocationBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -70,15 +73,15 @@ class MyLocationActivity : AppCompatActivity(), OnMapReadyCallback,
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)
             || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)){
-            PermissionUtils.RationaleDialog
-                .newInstance(LOCATION_PERMISSION_REQUEST_CODE, true)
+            PermissionUtils.RationaleDialog.newInstance(LOCATION_PERMISSION_REQUEST_CODE, true)
                 .show(supportFragmentManager, "dialog")
             return
         }
 
         ActivityCompat.requestPermissions(this,
             arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+                Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE
+        )
     }
 
     override fun onRequestPermissionsResult(
@@ -91,8 +94,17 @@ class MyLocationActivity : AppCompatActivity(), OnMapReadyCallback,
             return
         }
 
-        if (PermissionUtils.isPermissionGranted(permissions, grantResults, Manifest.permission.ACCESS_FINE_LOCATION)
-            || PermissionUtils.isPermissionGranted(permissions, grantResults, Manifest.permission.ACCESS_COARSE_LOCATION)){
+        if (PermissionUtils.isPermissionGranted(
+                permissions,
+                grantResults,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+            || PermissionUtils.isPermissionGranted(
+                permissions,
+                grantResults,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+        ){
             enableMyLocation()
         } else {
             permissionDenied = true

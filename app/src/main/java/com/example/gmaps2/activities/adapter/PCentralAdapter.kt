@@ -1,8 +1,9 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import com.example.gmaps2.R
 import com.example.gmaps2.databinding.InfoParcCentralBinding
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker

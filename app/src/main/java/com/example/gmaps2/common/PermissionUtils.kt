@@ -1,4 +1,4 @@
-package com.example.gmaps2
+package com.example.gmaps2.common
 
 import android.Manifest
 import android.app.AlertDialog

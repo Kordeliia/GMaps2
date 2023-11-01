@@ -1,11 +1,12 @@
-package com.example.gmaps2
+package com.example.gmaps2.activities
 
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import com.example.gmaps2.Utils.dp
+import com.example.gmaps2.common.Locations
+import com.example.gmaps2.R
+import com.example.gmaps2.common.Utils
+import com.example.gmaps2.common.Utils.dp
 import com.example.gmaps2.databinding.ActivityControlGesturesBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -14,8 +15,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import java.lang.Exception
-import com.google.android.gms.maps.model.LatLng
-
 
 
 class ControlGesturesActivity : AppCompatActivity(), OnMapReadyCallback {
